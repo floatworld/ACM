@@ -1,0 +1,39 @@
+//#include<iostream>
+//using namespace std;
+//long long a[55];
+//int rout(int k,int l)
+//{
+//    if(l-k<=2)
+//        return 1;
+//    else
+//        return rout(k,l-1)+rout(k,l-2);
+//}
+//int main()
+//{
+//    int N,k,l;
+//    cin>>N;
+//    while(N--){
+//        cin>>k>>l;
+//       int sum =rout(k,l);
+//       cout<<sum<<endl;
+//    }
+//    return 0;
+//}
+//通过递归的方法 但成本太高
+#include<iostream>
+using namespace std;
+long long a[55]={0,1,2};
+int main()
+{
+    int N,c,d,i;
+    cin>>N;
+    while(N--){
+        cin>>c>>d;
+        int t=d-c;
+        for(i=3;i<=t;i++){
+            a[i]=a[i-1]+a[i-2];
+        }
+        cout<<a[t]<<endl;
+    }
+    return 0;
+}
